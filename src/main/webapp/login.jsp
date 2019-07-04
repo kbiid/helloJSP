@@ -60,7 +60,8 @@ body {
 	screenWidth = 978;
 
 	window.onload = function() {
-<%manager.setId("kbiid");
+<%
+	manager.setId("kbiid");
 			manager.setPwd("1234");
 			manager.hashPwd();
 			repository.insert(manager);%>
