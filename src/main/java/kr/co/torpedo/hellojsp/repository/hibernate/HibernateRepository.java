@@ -15,34 +15,39 @@ import kr.co.torpedo.hellojsp.domain.User;
 public class HibernateRepository {
 	private SessionFactory sessionFactory;
 	private Session session;
-	private Transaction tx;
 
 	public HibernateRepository() {
 		sessionFactory = HibernateConnectionFactory.getSessionFactory();
 	}
 
-	public boolean checkManager(String id, String passwd) {
+	public Manager selectManager(String id) {
 		session = sessionFactory.openSession();
-		tx = session.beginTransaction();
 		Manager manager = (Manager) session.get(Manager.class, id);
-		tx.commit();
 		session.close();
-		if (!manager.getId().equals(id) || !manager.getPwd().equals(passwd)) {
-			return false;
-		}
-		return true;
+
+		return manager;
 	}
-	
+
 	public List<User> selectUserList() {
 		session = sessionFactory.openSession();
-		session.beginTransaction();
 
 		CriteriaBuilder builder = session.getCriteriaBuilder();
 		CriteriaQuery<User> criteriaQuery = builder.createQuery(User.class);
 		criteriaQuery.from(User.class);
 		List<User> list = session.createQuery(criteriaQuery).getResultList();
 		session.close();
-		
+
 		return list;
+	}
+
+	public void insert(Manager manager) {
+		if (selectManager(manager.getId()) != null) {
+			return;
+		}
+		session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		session.save(manager);
+		tx.commit();
+		session.close();
 	}
 }

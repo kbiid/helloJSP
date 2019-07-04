@@ -40,19 +40,21 @@ body {
 </style>
 </head>
 <body data-locale="ko">
-	<div id="webView" data-canvas="true" data-show-memo="false"
-		data-show-link="false"
-		title="페이지에 링크가 연결된 객체가 있을 경우 화면을 터치/클릭하면 표시됩니다.">
-		<div data-obj-id="WOgF3" data-obj-type="element"
-			data-text-editable="true" class=""
-			style="position: absolute; top: 44px; left: 339px; width: 297px; height: 50px;">
-			<div data-text-content="true"
-				style="font-size: 35px; text-align: center;" class="">고객 목록</div>
+	<div>
+		<div
+			style="position: absolute; top: 0px; left: 0px; width: 300px; height: 58px;">
+			<div
+				style="font-weight: bold; font-size: 41px; text-align: center; color: rgb(211, 0, 194);"
+				class="">Torpedo</div>
+		</div>
+		<div style="position: absolute; top: 44px; left: 871px; width: 297px; height: 50px;">
+			<div style="font-size: 35px; text-align: center;" class="">고객 목록</div>
 		</div>
 		<button type="button" onclick="location.href='login.jsp'"
-			style="position: absolute; top: 44px; left: 831px; width: 100px; height: 40px; font-size: 16px; color: rgb(255, 255, 255); text-align: center; line-height: 2.5em; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(52, 152, 219);">
+			style="position: absolute; top: 44px; left: 1600px; width: 100px; height: 40px; font-size: 16px; color: rgb(255, 255, 255); text-align: center; line-height: 2.5em; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(52, 152, 219);">
 			로그아웃</button>
-		<table border="1" style="position: absolute; top: 176px; left: 100px; width: 400px; height: 90px;">
+		<table border="1"
+			style="position: absolute; top: 176px; left: 670px; width: 400px; height: 90px;">
 			<tr>
 				<th>Id</th>
 				<th>이름</th>
@@ -62,7 +64,7 @@ body {
 				<th>ip 주소</th>
 			</tr>
 			<%
-				for (int i=0; i<10; i++) {
+				for (int i = 0; i < 10; i++) {
 					User user = userList.get(i);
 			%>
 			<tr>
