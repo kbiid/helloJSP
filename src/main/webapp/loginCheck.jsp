@@ -13,11 +13,11 @@
 	if (admin == null) {
 		response.sendRedirect("loginFail.html");
 	} else {
-		boolean check = admin.checkManager(id, passwd);
+		boolean check = admin.checkAdmin(id, passwd);
 		if (check) {
-			response.sendRedirect("viewUserList.jsp");
+	response.sendRedirect("viewUserList.jsp");
 		} else {
-			response.sendRedirect("loginFail.html");
+	response.sendRedirect("loginFail.html");
 		}
 	}
 %>
