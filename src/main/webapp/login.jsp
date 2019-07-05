@@ -27,7 +27,7 @@ body {
 </style>
 </head>
 <body>
-	<div >
+	<div>
 		<div
 			style="position: absolute; top: 29px; left: 800px; width: 300px; height: 58px;">
 			<div
@@ -37,10 +37,17 @@ body {
 
 		<form name="loginForm">
 			<div
+				style="position: absolute; top: 157px; left: 740px; width: 120px; height: 40px;">
+				<div style="font-size: 20px; text-align: right;">아이디:</div>
+			</div>
+			<div
 				style="position: absolute; top: 157px; left: 871px; width: 300px; height: 40px;">
 				<input type="text" data-min-width="60" data-min-height="30"
 					name="id" data-text-content="true" placeholder="아이디"
 					style="color: rgb(94, 94, 94);">
+			</div>
+			<div style="position: absolute; top: 243px; left: 740px; width: 120px; height: 40px;">
+				<div style="font-size: 20px; text-align: right; line-height: 1.5em;">비밀번호:</div>
 			</div>
 			<div
 				style="position: absolute; top: 243px; left: 871px; width: 300px; height: 40px;">
@@ -60,8 +67,7 @@ body {
 	screenWidth = 978;
 
 	window.onload = function() {
-<%
-	manager.setId("kbiid");
+<%manager.setId("kbiid");
 			manager.setPwd("1234");
 			manager.hashPwd();
 			repository.insert(manager);%>
