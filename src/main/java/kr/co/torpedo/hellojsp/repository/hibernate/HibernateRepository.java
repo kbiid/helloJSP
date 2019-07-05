@@ -20,17 +20,15 @@ public class HibernateRepository {
 		sessionFactory = HibernateConnectionFactory.getSessionFactory();
 	}
 
-	public Admin selectManager(String id) {
+	public Admin selectAdmin(String id) {
 		session = sessionFactory.openSession();
-		Admin manager = (Admin) session.get(Admin.class, id);
+		Admin admin = (Admin) session.get(Admin.class, id);
 		session.close();
-
-		return manager;
+		return admin;
 	}
 
 	public List<User> selectUserList() {
 		session = sessionFactory.openSession();
-
 		CriteriaBuilder builder = session.getCriteriaBuilder();
 		CriteriaQuery<User> criteriaQuery = builder.createQuery(User.class);
 		criteriaQuery.from(User.class);
@@ -41,7 +39,7 @@ public class HibernateRepository {
 	}
 
 	public void insert(Admin admin) {
-		if (selectManager(admin.getId()) != null) {
+		if (selectAdmin(admin.getId()) != null) {
 			return;
 		}
 		session = sessionFactory.openSession();

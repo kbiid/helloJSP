@@ -22,18 +22,6 @@ public class User {
 	@Column(name = "ip_address", columnDefinition = "varchar(200)")
 	private String ip_address;
 
-	public User() {
-	}
-
-	public User(int id, String first_name, String last_name, String email, String gender, String ip_address) {
-		this.id = id;
-		this.first_name = first_name;
-		this.last_name = last_name;
-		this.email = email;
-		this.gender = gender;
-		this.ip_address = ip_address;
-	}
-
 	public int getId() {
 		return id;
 	}

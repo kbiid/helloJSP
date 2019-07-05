@@ -3,12 +3,9 @@ package kr.co.torpedo.hellojsp.util;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-
 public class SHAHash {
-	
 	public String hash(String message) {
 		String sha = "";
-
 		MessageDigest md;
 		try {
 			md = MessageDigest.getInstance("SHA-256");
@@ -23,7 +20,6 @@ public class SHAHash {
 			e.printStackTrace();
 			sha = null;
 		}
-
 		return sha;
 	}
 }

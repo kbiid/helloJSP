@@ -37,8 +37,8 @@ public class Admin {
 		this.passwd = pwd;
 	}
 
-	public boolean checkAdmin(String id, String passwd) throws NoSuchAlgorithmException {
-		if (!this.id.equals(id) || !passwd.equals(hash.hash(passwd))) {
+	public boolean checkAdminInfo(String id, String passwd) throws NoSuchAlgorithmException {
+		if (!this.id.equals(id) || !this.passwd.equals(hash.hash(passwd))) {
 			return false;
 		}
 		return true;

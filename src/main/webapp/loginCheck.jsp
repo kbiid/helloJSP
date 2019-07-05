@@ -9,11 +9,11 @@
 	String id = request.getParameter("id");
 	String passwd = request.getParameter("passwd");
 
-	admin = repository.selectManager(id);
+	admin = repository.selectAdmin(id);
 	if (admin == null) {
 		response.sendRedirect("loginFail.html");
 	} else {
-		boolean check = admin.checkAdmin(id, passwd);
+		boolean check = admin.checkAdminInfo(id, passwd);
 		if (check) {
 	response.sendRedirect("viewUserList.jsp");
 		} else {
