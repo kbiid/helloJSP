@@ -3,17 +3,17 @@
 
 <jsp:useBean id="repository"
 	class="kr.co.torpedo.hellojsp.repository.hibernate.HibernateRepository" />
-<jsp:useBean id="manager" class="kr.co.torpedo.hellojsp.domain.Manager" />
+<jsp:useBean id="admin" class="kr.co.torpedo.hellojsp.domain.Admin" />
 <%
 	request.setCharacterEncoding("utf-8");
 	String id = request.getParameter("id");
 	String passwd = request.getParameter("passwd");
 
-	manager = repository.selectManager(id);
-	if (manager == null) {
+	admin = repository.selectManager(id);
+	if (admin == null) {
 		response.sendRedirect("loginFail.html");
 	} else {
-		boolean check = manager.checkManager(id, passwd);
+		boolean check = admin.checkManager(id, passwd);
 		if (check) {
 			response.sendRedirect("viewUserList.jsp");
 		} else {

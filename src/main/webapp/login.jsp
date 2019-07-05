@@ -46,7 +46,8 @@ body {
 					name="id" data-text-content="true" placeholder="아이디"
 					style="color: rgb(94, 94, 94);">
 			</div>
-			<div style="position: absolute; top: 243px; left: 740px; width: 120px; height: 40px;">
+			<div
+				style="position: absolute; top: 243px; left: 740px; width: 120px; height: 40px;">
 				<div style="font-size: 20px; text-align: right; line-height: 1.5em;">비밀번호:</div>
 			</div>
 			<div
@@ -62,17 +63,8 @@ body {
 </body>
 <jsp:useBean id="repository"
 	class="kr.co.torpedo.hellojsp.repository.hibernate.HibernateRepository" />
-<jsp:useBean id="manager" class="kr.co.torpedo.hellojsp.domain.Manager" />
 <script type="text/javascript">
 	screenWidth = 978;
-
-	window.onload = function() {
-<%manager.setId("kbiid");
-			manager.setPwd("1234");
-			manager.hashPwd();
-			repository.insert(manager);%>
-	}
-
 	function funcLogin() {
 		if (loginForm.id.value == "") {
 			alert("아이디를 입력해 주세요");

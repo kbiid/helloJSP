@@ -9,7 +9,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import kr.co.torpedo.hellojsp.domain.Manager;
+import kr.co.torpedo.hellojsp.domain.Admin;
 import kr.co.torpedo.hellojsp.domain.User;
 
 public class HibernateRepository {
@@ -20,9 +20,9 @@ public class HibernateRepository {
 		sessionFactory = HibernateConnectionFactory.getSessionFactory();
 	}
 
-	public Manager selectManager(String id) {
+	public Admin selectManager(String id) {
 		session = sessionFactory.openSession();
-		Manager manager = (Manager) session.get(Manager.class, id);
+		Admin manager = (Admin) session.get(Admin.class, id);
 		session.close();
 
 		return manager;
@@ -40,13 +40,13 @@ public class HibernateRepository {
 		return list;
 	}
 
-	public void insert(Manager manager) {
-		if (selectManager(manager.getId()) != null) {
+	public void insert(Admin admin) {
+		if (selectManager(admin.getId()) != null) {
 			return;
 		}
 		session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
-		session.save(manager);
+		session.save(admin);
 		tx.commit();
 		session.close();
 	}
