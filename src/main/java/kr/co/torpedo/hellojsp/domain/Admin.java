@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import kr.co.torpedo.hellojsp.util.SHAHash;
 
@@ -17,6 +18,7 @@ public class Admin {
 	private String id;
 	@Column(name = "passwd", columnDefinition = "varchar(100)")
 	private String passwd;
+	@Transient
 	private SHAHash hash = new SHAHash();
 
 	public String getId() {
