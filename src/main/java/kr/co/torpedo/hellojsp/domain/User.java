@@ -1,5 +1,7 @@
 package kr.co.torpedo.hellojsp.domain;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -21,6 +23,8 @@ public class User {
 	private String gender;
 	@Column(name = "ip_address", columnDefinition = "varchar(200)")
 	private String ipAddress;
+	@Column(name = "date", columnDefinition = "date")
+	private Date date;
 
 	public int getId() {
 		return id;
@@ -68,5 +72,13 @@ public class User {
 
 	public void setIpAddress(String ipAddress) {
 		this.ipAddress = ipAddress;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 }

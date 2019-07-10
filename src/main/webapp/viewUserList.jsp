@@ -64,6 +64,7 @@ body {
 				<th>Email</th>
 				<th>성별</th>
 				<th>ip 주소</th>
+				<th>가입 날짜</th>
 			</tr>
 			<%
 				for (int i = 0; i < 10; i++) {
@@ -76,6 +77,7 @@ body {
 				<td><%=user.getEmail()%></td>
 				<td><%=user.getGender()%></td>
 				<td><%=user.getIpAddress()%></td>
+				<td><%=user.getDate()%></td>
 			</tr>
 			<%
 				}
